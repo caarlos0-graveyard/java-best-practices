@@ -17,7 +17,6 @@ let's do this.
 
 
 ## Naming things
-
 - Try not to name things like `acf`, `dsg`, `sirfs` and things like that;
 - An object which will be used to log things is a `logger`, because it `logs`
 this. `log` is what the `logger` writes;
@@ -25,6 +24,7 @@ this. `log` is what the `logger` writes;
 - It is obvious that a property named `color` inside a `car` object is the
 `color` of the `car`. You don't need to name the property `carColor`. Avoid
 unneeded verbosity;
+- Use names that reveals your purpose, if you need comments to explain about the variable then the name not reveals your purpose. Exapmle:  `int dayPeriod = 5;` rather then `int day = 5; // day period`
 
 ## Columns
 
