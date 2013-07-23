@@ -16,6 +16,27 @@ let's do this.
 - Pull-request.
 
 
+## Syntax
+
+### CamelCase
+
+### Brackets
+
+### Loops and Conditionals
+
+### Method declarations
+
+### Class declarations
+
+### Deprecating things
+
+### Sort members
+
+### Trailing withespaces
+
+### TAB vs SPACEs and TAB size
+
+
 ## Naming things
 
 - Try not to name things like `acf`, `dsg`, `sirfs` and things like that;
