@@ -44,15 +44,17 @@ rules.
 You don't need to do conditionals to, for example, return `true` or `false`.
 The expression itself is a boolean already:
 
+Wrong:
+
 ```java
-// before
 private boolean hasContent(String field) {
   return (field != null && !field.trim().isEmpty()) ? true : false;
 }
 ```
 
+Right:
+
 ```java
-// after
 private boolean hasContent(String field) {
   return field != null && !field.trim().isEmpty();
 }
@@ -87,8 +89,9 @@ String var3 = new StringBuilder(var0).append(" - ").append(var1).toString();
 
 The problem is even worse if you concat Strings inside a loop. Example:
 
+Wrong:
+
 ```java
-// before
 if (result != null && (!result.isEmpty())) {
   String message = I18nService.translate("some message.\n");
   message += I18nService.translate("another message.\n");
@@ -105,8 +108,9 @@ if (result != null && (!result.isEmpty())) {
 }
 ```
 
+Right:
+
 ```java
-// after
 if (result != null && !result.isEmpty()) {
   StringBuilder message = new StringBuilder();
   message.append(I18nService.translate("some message.\n"));
@@ -141,16 +145,18 @@ read about it.
 Please, just don't do that. You will log the exception, probably another catch
 will do the same. You will end up having 2Mb of logs about the same exception.
 
+Wrong:
+
 ```java
-// before
 catch (Exception ex) {
   logger.warn("I got an exception!", ex);
   throw ex;
 }
 ```
 
+Better:
+
 ```java
-// after
 catch (Exception ex) {
   logger.warn("I got an exception!", ex);
 }
@@ -160,21 +166,25 @@ catch (Exception ex) {
 
 The stack is probably important.
 
+Wrong:
+
 ```java
-// before
 catch (Exception ex) {
   logger.warn("I got an exception: " + ex.getMessage());
 }
 ```
 
+Right:
+
 ```java
-// after
 catch (Exception ex) {
   logger.warn("I got an exception!", ex);
 }
 ```
 
 #### Don't do nonsense things like
+
+Wrong:
 
 ```java
 catch (Exception e) {
@@ -194,16 +204,17 @@ If you can somehow recover from an exception, **do it**.
 
 `TypedQuery` is just faster, and you don't need to cast.
 
+Wrong:
 
 ```java
-// before
 Query q = em.createQuery("SELECT t FROM Type t where xyz = :xyz");
 q.setParemeter("xyz", xyz);
 List<Type> types = (List<Type>) q.getResultList();
 ```
 
+Right:
+
 ```java
-// after
 TypedQuery<Type> q = em.createQuery("SELECT t FROM Type t where xyz = :xyz",
   Type.class);
 q.setParemeter("xyz", xyz);
@@ -212,8 +223,9 @@ List<Type> types = q.getResultList();
 
 #### Use fluent interface in queries
 
+Wrong:
+
 ```java
-// before
 TypedQuery<Type> q = em.createQuery(
   "SELECT t FROM Type t where xyz = :xyz and abc = :abc",
   Type.class);
@@ -221,9 +233,9 @@ q.setParemeter("xyz", xyz);
 q.setParemeter("abc", abc);
 List<Type> types = q.getResultList();
 ```
+Right:
 
 ```java
-// after
 List<Type> types = em.createQuery(
   "SELECT t FROM Type t where xyz = :xyz and abc = :abc",
   Type.class)
