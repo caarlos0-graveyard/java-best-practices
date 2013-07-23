@@ -47,7 +47,7 @@ rules.
 You don't need to do conditionals to, for example, return `true` or `false`.
 The expression itself is a boolean already:
 
-Wrong:
+Bad:
 
 ```java
 private boolean hasContent(String field) {
@@ -55,7 +55,7 @@ private boolean hasContent(String field) {
 }
 ```
 
-Right:
+Better:
 
 ```java
 private boolean hasContent(String field) {
@@ -66,33 +66,47 @@ private boolean hasContent(String field) {
 ## String Concatenations
 
 You should avoid the use of the `+` operator while dealing with Strings.
-Yes, the JVM itself will turn it into a `StringBuilder`, but, not in the
-best way.
+Yes, the JVM itself will turn it into a `StringBuilder`, but, it could not
+be in the best way. In general, use `StringBuilder` will be more readable
+and will save you some runtime. You can see some examples regarding this
+[here][concat-tests].
 
-If you just concat two Strings, it's OK (I recommend you to always use
-`StringBuilder` anyway, since other dev could just do another `+ "some str"`
-later otherwise). But if you concat three or more, JVM will instantiate
-one `StringBuilder` for every `+` operator. In other words, a code like
-
-```java
-String var3 = var0 + " - " + var1;
-```
-
-will be translated to something like
+As you may have seen in the [previous link][concat-tests], concatenating
+Strings inside a loop will lead to a not-so-good-implementation. For
+example, the following code:
 
 ```java
-String var3 = new StringBuilder(
-  new StringBuilder(var0).append(" - ").toString()).append(var1).toString();
+String out = "";
+for( int i = 0; i < 10000 ; i++ ) {
+    out = out + i;
+}
+return out;
 ```
-instead of something like:
+
+will be "translated" to something like:
 
 ```java
-String var3 = new StringBuilder(var0).append(" - ").append(var1).toString();
+String out = "";
+for( int i = 0; i < 10000; i++ ) {
+    out = new StringBuilder().append(out).append(i).toString();
+}
+return out;
+``` 
+
+which is not the best implementation, since it creates "useless" `StringBuilder`
+instances (one per iteration). The best implementation will probably be:
+
+```java
+StringBuilder out = new StringBuilder();
+for( int i = 0 ; i < 10000; i++ ) {
+    out.append(i);
+}
+return out.toString();
 ```
 
-The problem is even worse if you concat Strings inside a loop. Example:
+One more example:
 
-Wrong:
+Bad:
 
 ```java
 if (result != null && (!result.isEmpty())) {
@@ -111,7 +125,7 @@ if (result != null && (!result.isEmpty())) {
 }
 ```
 
-Right:
+Better:
 
 ```java
 if (result != null && !result.isEmpty()) {
@@ -148,7 +162,7 @@ read about it.
 Please, just don't do that. You will log the exception, probably another catch
 will do the same. You will end up having 2Mb of logs about the same exception.
 
-Wrong:
+Bad:
 
 ```java
 catch (Exception ex) {
@@ -169,7 +183,7 @@ catch (Exception ex) {
 
 The stack is probably important.
 
-Wrong:
+Bad:
 
 ```java
 catch (Exception ex) {
@@ -177,7 +191,7 @@ catch (Exception ex) {
 }
 ```
 
-Right:
+Better:
 
 ```java
 catch (Exception ex) {
@@ -187,7 +201,7 @@ catch (Exception ex) {
 
 #### Don't do nonsense things like
 
-Wrong:
+Bad:
 
 ```java
 catch (Exception e) {
@@ -198,7 +212,7 @@ catch (Exception e) {
 
 #### Use try-with-resources for closeable objects (prior to Java 7)
 
-Wrong:
+Good:
 
 ```java
 BufferedReader br = new BufferedReader(new FileReader(path));
@@ -209,7 +223,7 @@ try {
 }
 ```
 
-Right:
+Better:
 
 ```java
 try (BufferedReader br = new BufferedReader(new FileReader(path))) {
@@ -228,7 +242,7 @@ If you can somehow recover from an exception, **do it**.
 
 `TypedQuery` is just faster, and you don't need to cast.
 
-Wrong:
+Bad:
 
 ```java
 Query q = em.createQuery("SELECT t FROM Type t where xyz = :xyz");
@@ -236,7 +250,7 @@ q.setParemeter("xyz", xyz);
 List<Type> types = (List<Type>) q.getResultList();
 ```
 
-Right:
+Better:
 
 ```java
 TypedQuery<Type> q = em.createQuery("SELECT t FROM Type t where xyz = :xyz",
@@ -247,7 +261,7 @@ List<Type> types = q.getResultList();
 
 #### Use fluent interface in queries
 
-Wrong:
+Good:
 
 ```java
 TypedQuery<Type> q = em.createQuery(
@@ -257,7 +271,8 @@ q.setParemeter("xyz", xyz);
 q.setParemeter("abc", abc);
 List<Type> types = q.getResultList();
 ```
-Right:
+
+Better:
 
 ```java
 List<Type> types = em.createQuery(
@@ -272,3 +287,10 @@ List<Type> types = em.createQuery(
 
 - [Carlos Alexandro Becker](http://carlosbecker.com/about)
 - [Diego Aguir Selzlein](http://nerde.github.io/about)
+ 
+
+
+
+
+
+[concat-tests]: https://github.com/caarlos0/string-concat-tests
