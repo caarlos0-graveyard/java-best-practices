@@ -22,7 +22,9 @@ Some good practices related to syntax.
 
 ### Brackets
 
-In general, it is good to always use brackets. For example:
+In general, it is good to always use brackets.
+
+Right:
 
 ```java
 if (someVar != null) {
@@ -30,20 +32,26 @@ if (someVar != null) {
 }
 ```
 
-is a-OK, but
+Also Right:
 
 ```java
 if (someVar != null)
   someVar = new SomeClass();
 ```
 
-isn't work either. But, if it will be more than one line, brackets became
-mandatory.
+Wrong:
+
+```java
+if (someVar != null)
+  someVar = new SomeClass();
+  anotherVar = new AnotherClass(someVar);
+```
+
 
 ### Loops and Conditionals
 
 Always leave a space between the command and the first parentesis, as well
-between the last parentesis and the brackets:
+between the last parentesis and the brackets.
 
 Wrong:
 
@@ -58,6 +66,24 @@ Right:
 ```java
 if (someVar != null) {
   someVar = new SomeClass();
+}
+```
+
+Also, in for-each statements, always put spaces around the `:`.
+
+Wrong:
+
+```java
+for(SomeClass someVar:someVars){
+  someVar.doSomething();
+}
+```
+
+Right:
+
+```java
+for (SomeClass someVar : someVars) {
+  someVar.doSomething();
 }
 ```
 
