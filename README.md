@@ -11,7 +11,7 @@ let's do this.
 ## Contributing
 
 - Create a branch in this repository;
-- Make your changes;
+- Make your changes (respecting 80c rule, please);
 - Add your name as contributor in the end of this file;
 - Commit;
 - Pull-request;
@@ -76,7 +76,8 @@ String var3 = var0 + " - " + var1;
 will be translated to something like
 
 ```java
-String var3 = new StringBuilder(new StringBuilder(var0).append(" - ").toString()).append(var1).toString();
+String var3 = new StringBuilder(
+  new StringBuilder(var0).append(" - ").toString()).append(var1).toString();
 ```
 instead of something like:
 
@@ -129,15 +130,16 @@ new StringBuilder("str").append(var2 + " ");
 
 
 
-> **PROTIP**: There is also this thing called `String Pool`. You may want to read about it.
+> **PROTIP**: There is also this thing called `String Pool`. You may want to
+read about it.
 
 
 ## Exception Handling
 
 #### Don't log and throw
 
-Please, just don't do that. You will log the exception, probably another catch will do
-the same. You will end up having 2Mb of logs about the same exception.
+Please, just don't do that. You will log the exception, probably another catch
+will do the same. You will end up having 2Mb of logs about the same exception.
 
 ```java
 // before
@@ -202,7 +204,8 @@ List<Type> types = (List<Type>) q.getResultList();
 
 ```java
 // after
-TypedQuery<Type> q = em.createQuery("SELECT t FROM Type t where xyz = :xyz", Type.class);
+TypedQuery<Type> q = em.createQuery("SELECT t FROM Type t where xyz = :xyz",
+  Type.class);
 q.setParemeter("xyz", xyz);
 List<Type> types = q.getResultList();
 ```
@@ -211,7 +214,9 @@ List<Type> types = q.getResultList();
 
 ```java
 // before
-TypedQuery<Type> q = em.createQuery("SELECT t FROM Type t where xyz = :xyz and abc = :abc", Type.class);
+TypedQuery<Type> q = em.createQuery(
+  "SELECT t FROM Type t where xyz = :xyz and abc = :abc",
+  Type.class);
 q.setParemeter("xyz", xyz);
 q.setParemeter("abc", abc);
 List<Type> types = q.getResultList();
@@ -219,7 +224,9 @@ List<Type> types = q.getResultList();
 
 ```java
 // after
-List<Type> types = em.createQuery("SELECT t FROM Type t where xyz = :xyz and abc = :abc", Type.class)
+List<Type> types = em.createQuery(
+  "SELECT t FROM Type t where xyz = :xyz and abc = :abc",
+  Type.class)
 .setParemeter("xyz", xyz)
 .setParemeter("abc", abc)
 .getResultList();
