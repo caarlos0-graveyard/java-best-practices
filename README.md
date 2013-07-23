@@ -15,7 +15,7 @@ let's do this.
 - Add your name as contributor in the end of this file;
 - Commit;
 - Pull-request;
-- After pull-request being merged, delete your branch.
+- Once merged, delete your branch.
 
 
 ## Naming things
