@@ -5,13 +5,13 @@ while coding Java.
 
 ## Why private?
 
-It will private until it's madure enough to go to the public. Meanwhile,
+It will be private until it's mature enough to go public. Meanwhile,
 let's do this.
 
 ## Contributing
 
 - Create a branch in this repository;
-- Made your changes;
+- Make your changes;
 - Commit;
 - Pull-request.
 
@@ -19,7 +19,7 @@ let's do this.
 ## Naming things
 
 - Try not to name things like `acf`, `dsg`, `sirfs` and things like that;
-- A object which will be used to log things is a `logger`, because it `logs`
+- An object which will be used to log things is a `logger`, because it `logs`
 this. `log` is what the `logger` writes;
 - Constants should be `WRITTEN_LIKE_THIS`;
 - It is obvious that a property named `color` inside a `car` object is the
@@ -134,8 +134,8 @@ new StringBuilder("str").append(var2 + " ");
 
 #### Don't log and throw
 
-Please, just don't do that. You will log the exception, probably somewhere another catch will
-the same, in the end, you will have 2Mb of logs from the same exception.
+Please, just don't do that. You will log the exception, probably another catch will do
+the same. You will end up having 2Mb of logs about the same exception.
 
 ```java
 // before
@@ -181,7 +181,7 @@ catch (Exception e) {
 
 #### Always do something with the exception
 
-If you can somehow recover from the exception, **do it**.
+If you can somehow recover from an exception, **do it**.
 
 
 ## JPA
@@ -226,3 +226,4 @@ List<Type> types = em.createQuery("SELECT t FROM Type t where xyz = :xyz and abc
 ## Contributors
 
 - [Carlos Alexandro Becker](http://carlosbecker.com/about)
+- [Diego Aguir Selzlein](http://nerde.github.io/about)
