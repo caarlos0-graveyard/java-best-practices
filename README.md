@@ -209,15 +209,15 @@ List<Type> types = q.getResultList();
 
 ```java
 // before
-Query q = em.createQuery("SELECT t FROM Type t where xyz = :xyz and abc = :abc");
+TypedQuery<Type> q = em.createQuery("SELECT t FROM Type t where xyz = :xyz and abc = :abc", Type.class);
 q.setParemeter("xyz", xyz);
 q.setParemeter("abc", abc);
-List<Type> types = (List<Type>) q.getResultList();
+List<Type> types = q.getResultList();
 ```
 
 ```java
 // after
-List<Type> types = em.createQuery("SELECT t FROM Type t where xyz = :xyz and abc = :abc")
+List<Type> types = em.createQuery("SELECT t FROM Type t where xyz = :xyz and abc = :abc", Type.class)
 .setParemeter("xyz", xyz)
 .setParemeter("abc", abc)
 .getResultList();
