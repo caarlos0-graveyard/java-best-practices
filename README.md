@@ -1,7 +1,20 @@
 # Java Best Practices
 
 A practical guide through all sort of nonsense things people should not do
-while coding Java. 
+while coding Java.
+
+## Why private?
+
+It will private until it's madure enough to go to the public. Meanwhile,
+let's do this.
+
+## Contributing
+
+- Create a branch in this repository;
+- Made your changes;
+- Commit;
+- Pull-request.
+
 
 ## Naming things
 
