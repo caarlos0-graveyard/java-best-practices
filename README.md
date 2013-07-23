@@ -205,6 +205,23 @@ q.setParemeter("xyz", xyz);
 List<Type> types = q.getResultList();
 ```
 
+#### Use fluent interface in queries
+
+```java
+// before
+Query q = em.createQuery("SELECT t FROM Type t where xyz = :xyz and abc = :abc");
+q.setParemeter("xyz", xyz);
+q.setParemeter("abc", abc);
+List<Type> types = (List<Type>) q.getResultList();
+```
+
+```java
+// after
+List<Type> types = em.createQuery("SELECT t FROM Type t where xyz = :xyz and abc = :abc")
+.setParemeter("xyz", xyz)
+.setParemeter("abc", abc)
+.getResultList();
+```
 
 ## Contributors
 
