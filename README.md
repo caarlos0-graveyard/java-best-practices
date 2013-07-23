@@ -193,6 +193,27 @@ catch (Exception e) {
 }
 ```
 
+#### Use try-with-resources for closeable objects (prior to Java 7)
+
+Wrong:
+
+```java
+BufferedReader br = new BufferedReader(new FileReader(path));
+try {
+  return br.readLine();
+} finally {
+  if (br != null) br.close();
+}
+```
+
+Right:
+
+```java
+try (BufferedReader br = new BufferedReader(new FileReader(path))) {
+  return br.readLine();
+}
+```
+
 #### Always do something with the exception
 
 If you can somehow recover from an exception, **do it**.
