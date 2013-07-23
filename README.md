@@ -108,12 +108,52 @@ the javadoc.
 
 ### Deprecating things
 
+Wrong:
+
+```java
+public void doSomething()
+  throw Exception("This method is deprecated");
+}
+```
+
+Wrong:
+
+```java
+/**
+ * please dont use this method anymore.
+ **/
+public void doSomething()
+}
+```
+
+Right:
+
+```java
+/**
+ *
+ * @Deprecated: due to "some reason", this method is now
+ *  deprecated, please use {@link #thisMethod()} instead.
+ *
+ **/
+public void doSomething()
+  // leave the old code if possible, or adapt it to call the
+  // new method.
+}
+```
+
 ### Sort members
 
 ### Trailing withespaces
 
+Whatever editor you use, configure it to automatically remove trailing whitespaces.
+No one deserves a messed diff because of it.
+
+If you use git, you can also add a commit hook to do this.
+
 ### TAB vs SPACEs and TAB size
 
+Is a convention in Java-world to use **4 spaces sized TAB**, even if a lot of other
+laguages uses, in general, 2 spaces.
 
 ## Naming things
 
