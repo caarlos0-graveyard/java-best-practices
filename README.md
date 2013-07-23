@@ -18,13 +18,65 @@ let's do this.
 
 ## Syntax
 
-### CamelCase
+Some good practices related to syntax.
 
 ### Brackets
 
+In general, it is good to always use brackets. For example:
+
+```java
+if (someVar != null) {
+  someVar = new SomeClass();
+}
+```
+
+is a-OK, but
+
+```java
+if (someVar != null)
+  someVar = new SomeClass();
+```
+
+isn't work either. But, if it will be more than one line, brackets became
+mandatory.
+
 ### Loops and Conditionals
 
+Always leave a space between the command and the first parentesis, as well
+between the last parentesis and the brackets:
+
+Wrong:
+
+```java
+if(someVar != null){
+  someVar = new SomeClass();
+}
+```
+
+Right:
+
+```java
+if (someVar != null) {
+  someVar = new SomeClass();
+}
+```
+
 ### Method declarations
+
+Methods should do one thing. Only one. For example, if your method is called
+`save`, it should **save**. This is what everyone what will read the code
+will expect to.
+
+Method name should say what it do. When other developers read your code, they
+should be able to understand what any given method call will do, without read
+the method source code.
+
+Be succinct: dont use a lot of words in your method name. For example:
+`saveDocumentAndBuildSomethingAndReturnThatThing`. Also, if you have or feel like
+you should put a `and` noun in your method name, it is already wrong.
+
+Javadoc: Please, doesn't matter how much stupid the method may look like, fill
+the javadoc.
 
 ### Class declarations
 
