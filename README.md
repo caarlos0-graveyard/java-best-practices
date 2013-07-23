@@ -5,15 +5,17 @@ while coding Java.
 
 ## Why private?
 
-It will private until it's madure enough to go to the public. Meanwhile,
+It will be private until it's mature enough to go public. Meanwhile,
 let's do this.
 
 ## Contributing
 
 - Create a branch in this repository;
-- Made your changes;
+- Make your changes (respecting 80c rule, please);
+- Add your name as contributor in the end of this file;
 - Commit;
-- Pull-request.
+- Pull-request;
+- Once merged, delete your branch.
 
 
 ## Syntax
@@ -158,7 +160,7 @@ laguages uses, in general, 2 spaces.
 ## Naming things
 
 - Try not to name things like `acf`, `dsg`, `sirfs` and things like that;
-- A object which will be used to log things is a `logger`, because it `logs`
+- An object which will be used to log things is a `logger`, because it `logs`
 this. `log` is what the `logger` writes;
 - Constants should be `WRITTEN_LIKE_THIS`;
 - It is obvious that a property named `color` inside a `car` object is the
@@ -213,7 +215,8 @@ String var3 = var0 + " - " + var1;
 will be translated to something like
 
 ```java
-String var3 = new StringBuilder(new StringBuilder(var0).append(" - ").toString()).append(var1).toString();
+String var3 = new StringBuilder(
+  new StringBuilder(var0).append(" - ").toString()).append(var1).toString();
 ```
 instead of something like:
 
@@ -266,15 +269,16 @@ new StringBuilder("str").append(var2 + " ");
 
 
 
-> **PROTIP**: There is also this thing called `String Pool`. You may want to read about it.
+> **PROTIP**: There is also this thing called `String Pool`. You may want to
+read about it.
 
 
 ## Exception Handling
 
 #### Don't log and throw
 
-Please, just don't do that. You will log the exception, probably somewhere another catch will
-the same, in the end, you will have 2Mb of logs from the same exception.
+Please, just don't do that. You will log the exception, probably another catch
+will do the same. You will end up having 2Mb of logs about the same exception.
 
 ```java
 // before
@@ -320,7 +324,7 @@ catch (Exception e) {
 
 #### Always do something with the exception
 
-If you can somehow recover from the exception, **do it**.
+If you can somehow recover from an exception, **do it**.
 
 
 ## JPA
@@ -339,7 +343,8 @@ List<Type> types = (List<Type>) q.getResultList();
 
 ```java
 // after
-TypedQuery<Type> q = em.createQuery("SELECT t FROM Type t where xyz = :xyz", Type.class);
+TypedQuery<Type> q = em.createQuery("SELECT t FROM Type t where xyz = :xyz",
+  Type.class);
 q.setParemeter("xyz", xyz);
 List<Type> types = q.getResultList();
 ```
@@ -348,7 +353,9 @@ List<Type> types = q.getResultList();
 
 ```java
 // before
-TypedQuery<Type> q = em.createQuery("SELECT t FROM Type t where xyz = :xyz and abc = :abc", Type.class);
+TypedQuery<Type> q = em.createQuery(
+  "SELECT t FROM Type t where xyz = :xyz and abc = :abc",
+  Type.class);
 q.setParemeter("xyz", xyz);
 q.setParemeter("abc", abc);
 List<Type> types = q.getResultList();
@@ -356,7 +363,9 @@ List<Type> types = q.getResultList();
 
 ```java
 // after
-List<Type> types = em.createQuery("SELECT t FROM Type t where xyz = :xyz and abc = :abc", Type.class)
+List<Type> types = em.createQuery(
+  "SELECT t FROM Type t where xyz = :xyz and abc = :abc",
+  Type.class)
 .setParemeter("xyz", xyz)
 .setParemeter("abc", abc)
 .getResultList();
@@ -365,3 +374,4 @@ List<Type> types = em.createQuery("SELECT t FROM Type t where xyz = :xyz and abc
 ## Contributors
 
 - [Carlos Alexandro Becker](http://carlosbecker.com/about)
+- [Diego Aguir Selzlein](http://nerde.github.io/about)
