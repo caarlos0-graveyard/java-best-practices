@@ -27,6 +27,9 @@ this. `log` is what the `logger` writes;
 - It is obvious that a property named `color` inside a `car` object is the
 `color` of the `car`. You don't need to name the property `carColor`. Avoid
 unneeded verbosity;
+- Use names that show your purpose, if you need comments to explain about
+a variable, then the name does not show your purpose.
+Example: `int dayPeriod = 5;` rather than `int day = 5; // day period`
 
 ## Columns
 
