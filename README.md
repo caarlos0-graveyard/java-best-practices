@@ -12,8 +12,10 @@ let's do this.
 
 - Create a branch in this repository;
 - Make your changes;
+- Add your name as contributor in the end of this file;
 - Commit;
-- Pull-request.
+- Pull-request;
+- After pull-request being merged, delete your branch.
 
 
 ## Naming things
