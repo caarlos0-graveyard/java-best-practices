@@ -283,10 +283,62 @@ List<Type> types = em.createQuery(
 .getResultList();
 ```
 
+## Classes
+
+`Classes` (objects) must contain `data` (attributes) and `behaviors` (methods). 
+Also, `Classes` must be named using `CamelCase`.
+
+Simple example:
+
+```java
+// before
+class Account() {
+	
+	// data
+	private Long id;
+	private Integer number;
+	private Client owner;
+}
+```
+
+```java
+class Operation {
+
+	// behaviors
+	void draw(Account account, BigDecimal value) {
+		//logic	
+	}
+}
+```
+
+Don't you ever separate the behaviour in another class.
+
+do:
+
+```java
+// after
+class Account() {
+	
+	// data
+	private Long id;
+	private Integer number;
+	private Client owner;
+        
+        // behavior
+	void draw(Account account, BigDecimal value) {
+		//logic	
+	}
+}
+```
+
+
+
+
 ## Contributors
 
 - [Carlos Alexandro Becker](http://carlosbecker.com/about)
 - [Diego Aguir Selzlein](http://nerde.github.io/about)
+- [Régis Eduardo Weizenmann Gregol](http://regiseduardogregol.github.io/about)
  
 
 
