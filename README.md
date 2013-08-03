@@ -18,6 +18,145 @@ let's do this.
 - Once merged, delete your branch.
 
 
+## Syntax
+
+Some good practices related to syntax.
+
+### Brackets
+
+In general, it is good to always use brackets.
+
+Right:
+
+```java
+if (someVar != null) {
+  someVar = new SomeClass();
+}
+```
+
+Also Right:
+
+```java
+if (someVar != null)
+  someVar = new SomeClass();
+```
+
+Wrong:
+
+```java
+if (someVar != null)
+  someVar = new SomeClass();
+  anotherVar = new AnotherClass(someVar);
+```
+
+
+### Loops and Conditionals
+
+Always leave a space between the command and the first parentesis, as well
+between the last parentesis and the brackets.
+
+Wrong:
+
+```java
+if(someVar != null){
+  someVar = new SomeClass();
+}
+```
+
+Right:
+
+```java
+if (someVar != null) {
+  someVar = new SomeClass();
+}
+```
+
+Also, in for-each statements, always put spaces around the `:`.
+
+Wrong:
+
+```java
+for(SomeClass someVar:someVars){
+  someVar.doSomething();
+}
+```
+
+Right:
+
+```java
+for (SomeClass someVar : someVars) {
+  someVar.doSomething();
+}
+```
+
+### Method declarations
+
+Methods should do one thing. Only one. For example, if your method is called
+`save`, it should **save**. This is what everyone what will read the code
+will expect to.
+
+Method name should say what it do. When other developers read your code, they
+should be able to understand what any given method call will do, without read
+the method source code.
+
+Be succinct: dont use a lot of words in your method name. For example:
+`saveDocumentAndBuildSomethingAndReturnThatThing`. Also, if you have or feel like
+you should put a `and` noun in your method name, it is already wrong.
+
+Javadoc: Please, doesn't matter how much stupid the method may look like, fill
+the javadoc.
+
+### Class declarations
+
+### Deprecating things
+
+Wrong:
+
+```java
+public void doSomething()
+  throw Exception("This method is deprecated");
+}
+```
+
+Wrong:
+
+```java
+/**
+ * please dont use this method anymore.
+ **/
+public void doSomething()
+}
+```
+
+Right:
+
+```java
+/**
+ *
+ * @Deprecated: due to "some reason", this method is now
+ *  deprecated, please use {@link #thisMethod()} instead.
+ *
+ **/
+public void doSomething()
+  // leave the old code if possible, or adapt it to call the
+  // new method.
+}
+```
+
+### Sort members
+
+### Trailing withespaces
+
+Whatever editor you use, configure it to automatically remove trailing whitespaces.
+No one deserves a messed diff because of it.
+
+If you use git, you can also add a commit hook to do this.
+
+### TAB vs SPACEs and TAB size
+
+Is a convention in Java-world to use **4 spaces sized TAB**, even if a lot of other
+laguages uses, in general, 2 spaces.
+
 ## Naming things
 
 - Try not to name things like `acf`, `dsg`, `sirfs` and things like that;
