@@ -1,5 +1,8 @@
 # Java Best Practices
 
+> **Disclaimer**:
+> This is a WIP. If you want to contribute, please see the Contributing section.
+
 A practical guide through all sort of nonsense things people should not do
 while coding Java.
 
@@ -26,44 +29,55 @@ Some good practices related to syntax.
 
 In general, it is good to always use brackets.
 
-Right:
-
-```java
-if (someVar != null) {
-  someVar = new SomeClass();
-}
-```
-
-Also Right:
-
-```java
-if (someVar != null)
-  someVar = new SomeClass();
-```
-
-Wrong:
+Bad:
 
 ```java
 if (someVar != null)
   someVar = new SomeClass();
   anotherVar = new AnotherClass(someVar);
+
+if (someVar != null)
+{
+  someVar = new SomeClass();
+  anotherVar = new AnotherClass(someVar);
+}
+
+if (someVar != null){
+  someVar = new SomeClass();
+  anotherVar = new AnotherClass(someVar);
+}
 ```
 
+Better:
+
+```java
+if (someVar != null) {
+  someVar = new SomeClass();
+}
+
+if (someVar != null)
+  someVar = new SomeClass();
+```
 
 ### Loops and Conditionals
 
 Always leave a space between the command and the first parentesis, as well
 between the last parentesis and the brackets.
 
-Wrong:
+Bad:
 
 ```java
 if(someVar != null){
   someVar = new SomeClass();
 }
+
+if(someVar != null)
+{
+  someVar = new SomeClass();
+}
 ```
 
-Right:
+Better:
 
 ```java
 if (someVar != null) {
@@ -73,20 +87,28 @@ if (someVar != null) {
 
 Also, in for-each statements, always put spaces around the `:`.
 
-Wrong:
+Bad:
 
 ```java
 for(SomeClass someVar:someVars){
   someVar.doSomething();
 }
+
+for(SomeClass someVar:someVars)
+{
+  someVar.doSomething();
+}
 ```
 
-Right:
+Better:
 
 ```java
 for (SomeClass someVar : someVars) {
   someVar.doSomething();
 }
+
+for (SomeClass someVar : someVars)
+  someVar.doSomething();
 ```
 
 ### Method declarations
@@ -110,7 +132,7 @@ the javadoc.
 
 ### Deprecating things
 
-Wrong:
+Bad:
 
 ```java
 public void doSomething()
@@ -154,8 +176,8 @@ If you use git, you can also add a commit hook to do this.
 
 ### TAB vs SPACEs and TAB size
 
-Is a convention in Java-world to use **4 spaces sized TAB**, even if a lot of other
-laguages uses, in general, 2 spaces.
+Is a convention in Java-world to ident with **4 spaces sized hard tabs**, even if
+a lot of other laguages uses, in general, 2 spaces soft tabs.
 
 ## Naming things
 
@@ -180,6 +202,11 @@ This happens due to the language verbosity. 80c in Java is really nothing.
 
 I will not enter in details about that. You could just Google about the 80c/120c
 rules.
+
+## This if for disambiguation only
+
+That's it. Don't use `this` keyword with the purpose to make it more readable,
+you are doing the opposite.
 
 ## Booleans
 
@@ -288,11 +315,10 @@ And just don't do this kind of nonsense things:
 new StringBuilder("str").append(var2 + " ");
 ```
 
-
-
 > **PROTIP**: There is also this thing called `String Pool`. You may want to
 read about it.
 
+[concat-tests]: https://github.com/caarlos0/string-concat-tests
 
 ## Exception Handling
 
@@ -478,10 +504,3 @@ class Account() {
 - [Carlos Alexandro Becker](http://carlosbecker.com/about)
 - [Diego Aguir Selzlein](http://nerde.github.io/about)
 - [Régis Eduardo Weizenmann Gregol](http://regiseduardogregol.github.io/about)
- 
-
-
-
-
-
-[concat-tests]: https://github.com/caarlos0/string-concat-tests
