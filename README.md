@@ -12,6 +12,8 @@ while coding Java.
 5. Create new Pull Request
 
 
+-------------------------------------------
+
 ## Syntax
 
 Some good practices related to syntax.
