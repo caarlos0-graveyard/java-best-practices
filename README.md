@@ -496,8 +496,5 @@ class Account() {
 
 
 
-## Contributors
+## [Contributors](https://github.com/caarlos0/java-best-practices/graphs/contributors)
 
-- [Carlos Alexandro Becker](http://carlosbecker.com/about)
-- [Diego Aguir Selzlein](http://nerde.github.io/about)
-- [Régis Eduardo Weizenmann Gregol](http://regiseduardogregol.github.io/about)
