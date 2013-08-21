@@ -5,12 +5,11 @@ while coding Java.
 
 ## Contributing
 
-- Create a branch in this repository;
-- Make your changes (respecting 80c rule, please);
-- Add your name as contributor in the end of this file;
-- Commit;
-- Pull-request;
-- Once merged, delete your branch.
+1. Fork it
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create new Pull Request
 
 
 ## Syntax
