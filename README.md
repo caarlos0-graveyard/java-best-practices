@@ -3,11 +3,6 @@
 A practical guide through all sort of nonsense things people should not do
 while coding Java.
 
-## Why private?
-
-It will be private until it's mature enough to go public. Meanwhile,
-let's do this.
-
 ## Contributing
 
 - Create a branch in this repository;
