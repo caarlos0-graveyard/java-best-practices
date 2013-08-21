@@ -1,8 +1,5 @@
 # Java Best Practices
 
-> **Disclaimer**:
-> This is a WIP. If you want to contribute, please see the Contributing section.
-
 A practical guide through all sort of nonsense things people should not do
 while coding Java.
 
