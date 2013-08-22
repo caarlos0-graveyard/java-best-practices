@@ -54,8 +54,8 @@ if (someVar != null)
 
 ### Loops and Conditionals
 
-Always leave a space between the command and the first parentesis, as well
-between the last parentesis and the brackets.
+Always leave a space between the command and the first parenthesis, as well
+between the last parenthesis and the brackets.
 
 Bad:
 
@@ -114,9 +114,9 @@ Method name should say what it do. When other developers read your code, they
 should be able to understand what any given method call will do, without read
 the method source code.
 
-Be succinct: dont use a lot of words in your method name. For example:
+Be succinct: Don't use a lot of words in your method name. For example:
 `saveDocumentAndBuildSomethingAndReturnThatThing`. Also, if you have or feel like
-you should put a `and` noun in your method name, it is already wrong.
+you should put a `and` noun in your method name, maybe it's time to split your method into a more single-responsibility way.
 
 Javadoc: Please, doesn't matter how much stupid the method may look like, fill
 the javadoc.
@@ -137,7 +137,7 @@ Wrong:
 
 ```java
 /**
- * please dont use this method anymore.
+ * please don't use this method anymore.
  **/
 public void doSomething()
 }
@@ -196,7 +196,7 @@ This happens due to the language verbosity. 80c in Java is really nothing.
 I will not enter in details about that. You could just Google about the 80c/120c
 rules.
 
-## This if for disambiguation only
+## This is for disambiguation only
 
 That's it. Don't use `this` keyword with the purpose to make it more readable,
 you are doing the opposite.
