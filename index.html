@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
+  <title>Java Best Practices</title>
+</head>
+<body ng-controller="mainController">
+  <header>
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">Java Best Practices</a>
+        </div>
+
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+          <li>
+            <a href="https://github.com/caarlos0/java-best-practices"><i class="fa fa-github"></i> Github</a>
+          </li>
+          <!-- <li><a href="#about"><i class="fa fa-shield"></i> About</a></li>
+          <li><a href="#contact"><i class="fa fa-comment"></i> Contact</a></li> -->
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <div id="main" class="container">
+    <div ng-view></div>
+  </div>
+  <hr>
+  <footer class="footer">
+    <div class="container">
+      <p class="pull-right"><a href="#" target="_self">Back to top</a></p>
+      <p>
+        By <a href="http://carlosbecker.com">Carlos Alexandro Becker</a>
+        and many more <a href="https://github.com/caarlos0/java-best-practices/graphs/contributors">
+        awesome&nbsp;contributors
+      </a>.
+    </p>
+    <p>Code licensed under the
+      <a href="https://github.com/caarlos0/java-best-practices/blob/master/LICENSE">
+        The MIT License
+      </a>.
+    </p>
+    <p>
+      Hosted by
+      <a href="https://github.com">
+        Github
+      </a>.
+    </p>
+  </div>
+</footer>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.8/angular.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.8/angular-route.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/showdown/0.3.1/showdown.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
