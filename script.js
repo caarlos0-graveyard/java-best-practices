@@ -18,7 +18,7 @@ app.directive("markdown", function ($compile, $http) {
 })
 
 app.controller('mainController', function ($scope, $routeParams) {
-     $scope.templateUrl =  '/pages/' + $routeParams.name + '.html'
+     $scope.templateUrl =  './pages/' + $routeParams.name + '.html'
 })
 
 app.config(function($routeProvider) {
