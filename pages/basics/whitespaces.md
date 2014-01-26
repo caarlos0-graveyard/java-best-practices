@@ -1,6 +1,3 @@
-<pager previous-path="#basics/120c" previous-txt="120c"
-  next-path="#basics/classes" next-txt="Classes"></pager>
-<markdown>
 # Spaces
 
 ## Trailing withespaces
@@ -15,4 +12,3 @@ If you use git, you can also add a commit hook to do this.
 Is a convention in Java-world to ident with **4 spaces sized hard tabs**, even
 if a lot of other laguages uses, in general, 2 spaces soft tabs, and even if
 Oracle actually recommends 8 spaces hard tabs (which is insane).
-</markdown>

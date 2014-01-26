@@ -1,6 +1,3 @@
-<pager previous-path="#basics/classes" previous-txt="Classes"
-  next-path="#basics/generics" next-txt="Generics"></pager>
-<markdown>
 # Method declarations
 
 ## Single Responsibility
@@ -52,4 +49,3 @@ public void doSomething()
   // new method.
 }
 ```
-</markdown>

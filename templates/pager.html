@@ -1,8 +1,8 @@
 <ul class="pager">
   <li class="previous" ng-class="!!previousPath ? '' : 'disabled'">
-    <a href="{{ previousPath || '#' }}">&larr; {{ previousTxt }}</a>
+    <a href="{{ previousPath }}">&larr; {{ previousTxt }}</a>
   </li>
   <li class="next" ng-class="!!nextPath ? '' : 'disabled'">
-    <a href="{{ nextPath || '#' }}">{{ nextTxt }} &rarr;</a>
+    <a href="{{ nextPath }}">{{ nextTxt }} &rarr;</a>
   </li>
 </ul>

@@ -1,11 +1,6 @@
-<pager previous-path="#basics/methods" previous-txt="Methods"
-  next-path="#basics/other-language-basics" next-txt="Other language basics">
-</pager>
-<markdown>
 # Generics
 
 The general rule for this is: **never cast**. 99.99999999% of the time you
 cast something, there is another way to do it.
 
 Also, avoid with will the `@SupressWarnings` annotation.
-</markdown>

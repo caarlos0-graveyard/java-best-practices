@@ -1,0 +1,7 @@
+<span ng-if="page.section">
+  {{ page.section }}
+  <ul>
+    <li ng-repeat="page in page.links" ng-include="'./templates/links.html'"></li>
+  </ul>
+</span>
+<a ng-if="page.link" href="{{ page.link }}">{{ page.name }}</a>

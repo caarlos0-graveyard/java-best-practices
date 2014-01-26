@@ -1,0 +1,35 @@
+[
+  {
+    "section": "Basics",
+    "links": [
+      { "name": "Syntax", "link": "#basics/syntax" },
+      { "name": "Exceptions", "link": "#basics/exceptions" },
+      { "name": "120c", "link": "#basics/120c" },
+      { "name": "Whitespaces", "link": "#basics/whitespaces" },
+      { "name": "Classes", "link": "#basics/classes" },
+      { "name": "Methods", "link": "#basics/methods" },
+      { "name": "Generics", "link": "#basics/generics" },
+      { "name": "Other language basics", "link": "#basics/other-language-basics" }
+    ]
+  }, {
+    "section": "Java EE",
+    "links": [
+      { "name": "JPA", "link": "#jee/jpa" },
+      {
+        "section": "EJB",
+        "links": [
+          { "name": "Stateless", "link": "#jee/ejb/stateless" },
+          { "name": "Stateful", "link": "#jee/ejb/stateful" },
+          { "name": "MessageDriven", "link": "#jee/ejb/mdb" },
+          { "name": "CDI", "link": "#jee/ejb/cdi" }
+        ]
+      }
+    ]
+  }, {
+    "section": "Patterns",
+    "links": [
+      { "name": "Design Patterns (GOF)", "link": "#patterns/gof" },
+      { "name": "JEE Patterns", "link": "#patterns/jee" }
+    ]
+  }
+]

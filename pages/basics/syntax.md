@@ -1,5 +1,3 @@
-<pager next-path="#basics/exceptions" next-txt="Exceptions"></pager>
-<markdown>
 # Syntax
 
 Some good practices related to syntax.
@@ -89,4 +87,4 @@ for (SomeClass someVar : someVars) {
 for (SomeClass someVar : someVars)
   someVar.doSomething();
 ```
-</markdown>
+

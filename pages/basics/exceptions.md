@@ -1,6 +1,3 @@
-<pager previous-path="#basics/syntax" previous-txt="Syntax"
-  next-path="#basics/120c" next-txt="120c"></pager>
-<markdown>
 # Exception Handling
 
 ## Don't log and throw
@@ -82,4 +79,3 @@ try (BufferedReader br = new BufferedReader(new FileReader(path))) {
 If you can somehow recover from an exception, **do it**.
 
 The golden rule is: **never catch an exception that you can't recover from**.
-</markdown>

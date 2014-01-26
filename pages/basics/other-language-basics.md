@@ -1,7 +1,3 @@
-<pager previous-path="#basics/generics" previous-txt="Generics"
-  next-path="#jee/jpa" next-txt="JPA">
-</pager>
-<markdown>
 # Other Language Basics
 
 ## Naming things
@@ -132,4 +128,3 @@ new StringBuilder("str").append(var2 + " ");
 read about it.
 
 [concat-tests]: https://github.com/caarlos0/string-concat-tests
-</markdown>

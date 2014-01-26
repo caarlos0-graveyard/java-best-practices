@@ -1,8 +1,3 @@
-<pager previous-path="#basics/other-language-basics"
-  previous-txt="Other language basics" next-path="#jee/ejb/stateless"
-  next-txt="Stateless">
-</pager>
-<markdown>
 # JPA
 
 ### Use `TypedQuery` instead of `Query`
@@ -46,4 +41,3 @@ List<Type> types = em.createQuery(
   .setParemeter("abc", abc)
   .getResultList();
 ```
-</markdown>
