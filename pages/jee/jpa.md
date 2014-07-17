@@ -41,3 +41,17 @@ List<Type> types = em.createQuery(
   .setParemeter("abc", abc)
   .getResultList();
 ```
+
+### Use `FetchType.LAZY` on relations 
+
+Sometimes you need to relate two entities, and when you use annotations like `@ManyToOne` and `@OneToOne` the default property is `FetchType.EAGER`.
+
+* `EAGER` collections are fetched fully at the time their parent is fetched. Even if you don't need them
+* `LAZY` on the other hand, means that the collection is fetched only when you try to access them (It's LAZY hum?)
+
+There's a HUGE slow down performance when you use `EAGER`. Only use if you have a good reason to do.
+
+```java
+@ManyToOne(fetch = FetchType.LAZY)
+private Client clients;
+```
