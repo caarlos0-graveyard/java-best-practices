@@ -1,3 +1,15 @@
+h1 {
+  font-size: 50px;
+}
+
+p {
+  font-size: 18px;
+}
+
+ul li {
+  font-size: 18px;
+}
+
 .page.ng-enter {
   -webkit-animation: fadeIn 1s;
   -moz-animation: fadeIn 1s;
