@@ -1,10 +1,10 @@
 ## Classes
 
-Classes are the bulding bloacks of any Java application and if these building blocks are not written carefully, it could lead to design issues in production or maintenance. 
+Classes are the building blocks of any Java application and if these building blocks are not written carefully, it could lead to design issues in production or maintenance. 
 
 ## 5 recommended design principles
 
-The 5 design priciples can be reffered to as `SOLID` in short.
+The 5 design principles can be referred to as `SOLID` in short.
 
 They are: 
 
@@ -16,7 +16,7 @@ They are:
 5. Dependency Inversion Principle
 ```
 
-Lets discuss them one by one:
+Let's discuss them one by one:
 
 ```
 1. Single Responsibility Principle: One class, one responsibility
@@ -38,7 +38,7 @@ For example, if you take a look into any good framework like struts or spring, y
 3. Liskov’s Substitution Principle: Objects should be replaceable with instances of their subtypes
 ```
 
-Classes  created by extending your class should be able to fit in the application without altering the correctness of the program. It can be achieved by strictly adhering to the single responsibility principle.
+Classes created by extending your class should be able to fit in the application without altering the correctness of the program. It can be achieved by strictly adhering to the single responsibility principle.
 
 For example, if S is a subtype of T, then objects of type T may be replaced with objects of type S without causing any fatal exceptions.
 
